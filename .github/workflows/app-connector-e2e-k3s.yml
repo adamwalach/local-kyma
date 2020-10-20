@@ -38,3 +38,6 @@ jobs:
     - name: Run End To End Test
       run: |
         ./app-connector-example.sh
+    - name: Clean up
+      run: |
+        ./kyma-k3d-delete.sh
