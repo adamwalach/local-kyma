@@ -15,9 +15,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: Prepare docker registry, k3s and helm 3
       run: |
-        ./create-cluster-k3s.sh
-        echo "Installing helm"
-        curl -s https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+        ./create-cluster-k3d.sh
+        #echo "Installing helm"
+        #curl -s https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
         while [[ $(kubectl get nodes -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do echo "Waiting for cluster nodes to be ready"; sleep 2; done
     - name: Install Istio
       run: |
