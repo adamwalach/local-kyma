@@ -40,4 +40,4 @@ jobs:
         ./app-connector-example.sh
     - name: Clean up
       run: |
-        ./kyma-k3d-delete.sh
+        ./kyma-k3d-delete.sh || true
