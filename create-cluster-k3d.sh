@@ -13,7 +13,7 @@ docker run -d \
   --restart=always \
   --name registry.localhost \
   --network k3d-kyma \
-  -v $PWD/registry:/var/lib/registry \
+  -v /opt/runners/local-kyma-registry:/var/lib/registry \
   registry:2
 
 # Create Kyma cluster
